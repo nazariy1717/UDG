@@ -1,0 +1,38 @@
+
+
+@mixin wh($width, $height)
+  width: $width
+  height: $height
+
+
+@mixin transition($elem, $time, $func)
+  -webkit-transition: $elem $time $func
+  -moz-transition: $elem $time $func
+  -o-transition: $elem $time $func
+  transition: $elem $time $func
+
+
+@mixin pseudo()
+  content: ''
+  position: absolute
+
+@mixin title()
+  display: block
+  font-family: 'Acrom',sans-serif
+  font-weight: 800
+  text-transform: uppercase
+
+@mixin ellipsis($height)
+  overflow: hidden
+  max-height: $height
+  text-overflow: ellipsis
+  display: block
+  //display: -webkit-box
+  //-webkit-line-clamp: $count
+  -webkit-box-orient: vertical
+
+@mixin visibility()
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility:    hidden
+  -ms-backface-visibility:     hidden
+  backface-visibility:     hidden

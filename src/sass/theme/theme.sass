@@ -1,0 +1,148 @@
+@import ../mixins/mixins
+$main: #479A91
+$black: #414042
+$grey: #b2b2b2
+
+.btn
+  background: transparent
+  text-align: center
+  outline: none
+  cursor: pointer
+
+.btn__main
+  height: 50px
+  background-color: $main
+  text-align: center
+  @include title
+  font-size: 16px
+  color: white
+  line-height: 50px
+
+.app__link
+  position: relative
+  color: $main
+  font-size: 15px
+  @include title
+  display: inline-block
+
+.app__link:before
+  @include pseudo
+  left: 0
+  right: 0
+  bottom: -1px
+  height: 1px
+  @include wh(100%,1px)
+  background-color: $main
+  @include transition(all,0.3s,ease)
+
+.app__link:after
+  content: "\e905"
+  font-family: 'icomoon' !important
+  position: absolute
+  right: -35px
+  font-size: 19px
+  transform: rotate(180deg)
+  @include transition(all,0.3s,ease)
+.app__link:hover:after
+  right: -25px
+.app__link:hover:before
+  width: 0
+
+
+
+
+
+::-webkit-input-placeholder
+  color: white
+  font-family: 'Acrom',sans-serif
+  font-weight: 300
+  font-size: 15px
+
+::-moz-placeholder
+  color: white
+  font-family: 'Acrom',sans-serif
+  font-weight: 300
+  font-size: 15px
+
+
+
+input,textarea
+  height: 30px
+  width: 100%
+  background-color: transparent
+  border-bottom: 1px solid #989b9c
+  color: #414042
+  font-family: 'Roboto',sans-serif
+  font-size: 17px
+  font-weight: 700
+
+input
+  line-height: 30px
+  padding: 5px 0
+
+textarea
+  resize: vertical
+  display: inherit
+
+label
+  position: absolute
+  pointer-events: none
+  left: 0
+  top: 5px
+  color: #989b9c
+  font-family: 'Roboto',sans-serif
+  font-size: 14px
+  font-weight: 300
+  line-height: 22px
+  text-transform: uppercase
+  @include transition(all,0.3s,ease)
+
+
+input:focus, textarea:focus
+  outline: none
+
+input:focus ~ label, input:valid ~ label
+  top: -20px
+  font-size: 10px
+
+textarea:focus ~ label, textarea:valid ~ label
+  top: -20px
+  font-size: 10px
+
+input:focus ~ .form__line:before, input:focus ~ .form__line:after
+  width: 50%
+
+textarea:focus ~ .form__line:before, textarea:focus ~ .form__line:after
+  width: 50%
+
+
+@-webkit-keyframes menu
+  0%
+    opacity: 0
+    transform: rotateY(-90deg) translateY(30px)
+  100%
+    opacity: 1
+    transform: rotateY(0) translateY(0)
+
+@keyframes menu
+  0%
+    opacity: 0
+    transform:  translateY(30px)
+  100%
+    opacity: 1
+    transform:  translateY(0)
+
+
+@-webkit-keyframes mouse
+  0%
+    transform:  translateY(0)
+  100%
+    transform:  translateY(25px)
+    opacity: 0
+
+@keyframes mouse
+  0%
+    transform:  translateY(0)
+  100%
+    transform:  translateY(25px)
+    opacity: 0

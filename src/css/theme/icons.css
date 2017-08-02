@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("..//fonts/icomoon.eot?54mrv3");
+  src: url("..//fonts/icomoon.eot?54mrv3#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?54mrv3") format("truetype"), url("../fonts/icomoon.woff?54mrv3") format("woff"), url("../fonts/icomoon.svg?54mrv3#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-envelope:before {
+  content: "\e900"; }
+
+.icon-envelope {
+  font-size: 22px; }
+
+.icon-facebook:before {
+  content: "\e901"; }
+
+.icon-internet:before {
+  content: "\e902"; }
+
+.icon-mouse {
+  color: white;
+  font-size: 35px; }
+
+.icon-mouse:before {
+  content: "\e903"; }
+
+.icon-placeholder {
+  font-size: 28px; }
+
+.icon-placeholder:before {
+  content: "\e904"; }
+
+.icon-slim-left:before {
+  content: "\e905"; }
+
+.icon-slim-right:before {
+  content: "\e905";
+  transform: rotate(180deg);
+  position: relative;
+  display: block;
+  top: -1px; }
+
+.icon-smartphone:before {
+  content: "\e906"; }
+
+.icon-smartphone {
+  font-size: 28px; }
+
+.icon-twitter:before {
+  content: "\e907"; }
+
+.icon-search:before {
+  content: "\e908"; }

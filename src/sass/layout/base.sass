@@ -1,0 +1,229 @@
+@import ../mixins/mixins
+
+$main: #479A91
+$black: #414042
+$grey: #b2b2b2
+$green:  #8dc63f
+
+
+*
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  vertical-align: baseline
+  font-size: 100%
+
+
+*, *:before, *:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+
+body
+  font-style: normal
+  font-variant-ligatures: normal
+  font-variant-caps: normal
+  font-variant-numeric: normal
+  font-stretch: normal
+  font-size: 14px
+  line-height: 24px
+  font-family: 'Roboto',sans-serif
+  font-weight: 300
+  color: $black
+  overflow-x: hidden
+
+ol, ul
+  margin: 0
+  list-style-type: none
+
+b
+  font-weight: bold
+
+a
+  text-decoration: none
+  color: inherit
+  background-color: transparent
+  cursor: pointer
+
+
+.text-center
+  text-align: center
+  display: block
+
+.text-right
+  text-align: right
+  display: block
+
+.text-left
+  text-align: left
+  display: block
+
+.table
+  display: table
+  @include wh(100%,100%)
+
+.table-cell
+  display: table-cell
+  vertical-align: middle
+
+@font-face
+  font-family: 'Roboto'
+  src: url('../fonts/Roboto-Light.eot')
+  src: url('../fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Light.woff') format('woff'), url('../fonts/Roboto-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: 'Roboto'
+  src: url('../fonts/Roboto-Bold.eot')
+  src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Bold.woff') format('woff'), url('../fonts/Roboto-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'Acrom'
+  src: url('../fonts/Acrom-Light.eot')
+  src: url('../fonts/Acrom-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Acrom-Light.woff') format('woff'), url('../fonts/Acrom-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+
+
+@font-face
+  font-family: 'Acrom'
+  src: url('../fonts/Acrom-ExtraBold.eot')
+  src: url('../fonts/Acrom-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Acrom-ExtraBold.woff') format('woff'), url('../fonts/Acrom-ExtraBold.ttf') format('truetype')
+  font-weight: 800
+  font-style: normal
+
+
+
+.title-b
+  position: relative
+  h1,h2,h3
+    display: inline-block
+
+.title
+  @include title
+  position: relative
+  font-size: 45px
+  line-height: 50px
+  i
+    position: absolute
+    top: -27px
+    left: -45px
+    @include wh(25px,25px)
+    background-color: $main
+
+.title:before, .title:after
+  @include pseudo
+  display: block
+  background-color: $green
+
+.title:before
+  @include wh(19px,19px)
+  left: -60px
+  top: 8px
+
+.title:after
+  @include wh(12px,12px)
+  left: -35px
+  top: 11px
+
+.one-column
+  padding-left: 65px
+
+
+
+/*carousel*/
+.flickity-enabled
+  position: relative
+
+.flickity-enabled:focus
+  outline: none
+
+.flickity-viewport
+  overflow: hidden
+  position: relative
+  height: 100%
+
+.flickity-slider
+  position: absolute
+  width: 100%
+  height: 100%
+
+.flickity-enabled.is-draggable
+  -webkit-tap-highlight-color: transparent
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.flickity-enabled.is-draggable .flickity-viewport
+  cursor: move
+  cursor: -webkit-grab
+  cursor: grab
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down
+  cursor: -webkit-grabbing
+  cursor: grabbing
+
+
+
+.carousel-content
+  max-width: 700px
+  margin: auto
+  position: relative
+
+.carousel
+  min-height: 220px
+  padding-top: 75px
+  padding-left: 50px
+  z-index: 5
+  &__cell
+    width: 100%
+    margin-right: 50px
+  &__title
+    font-size: 65px
+    color: white
+    @include title
+    line-height: 70px
+
+.carousel:before
+  @include pseudo
+  top: 0
+  left: 0
+  bottom: 0
+  width: 6px
+  background-color: $green
+
+
+.carousel-nav
+  position: absolute
+  top: 0
+  left: 50px
+  z-index: 7
+  &__btn
+    background: transparent
+    color: white
+    display: inline-block
+    padding: 10px
+    cursor: pointer
+    font-size: 21px
+  &__progress
+    padding: 0 10px
+    display: inline-block
+    color: white
+    span,i
+      font-family: 'Acrom',sans-serif
+      font-style: normal
+    span
+      font-size: 23px
+    span:nth-child(1)
+      color: $green
+      width: 20px
+      display: inline-block
+
+
+

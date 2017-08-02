@@ -1,0 +1,637 @@
+@import ../mixins/mixins
+
+$main: #479A91
+$black: #414042
+$grey: #b2b2b2
+$green: #8dc63f
+
+
+.header
+  position: absolute
+  left: 0
+  right: 0
+  z-index: 9
+  padding-top: 20px
+  @include transition(all,0.3s,ease)
+  &__row
+    position: relative
+  &__column
+    padding: 0 30px
+
+
+
+.logo
+  max-width: 145px
+  &__img
+    display: block
+    @include wh(117px,59px)
+    background: 
+      size: contain
+      position: center
+      repeat: no-repeat
+      image: url("../img/logo.png")
+    margin-bottom: 5px
+  &__txt
+    padding-left: 15px
+    max-width: 90px
+    margin: auto
+    color: white
+    line-height: 15px
+    font-size: 13px
+    font-weight: 300
+    text-transform: uppercase
+
+.nav
+  display: inline-block
+  padding-top: 15px
+  &__item
+    padding: 0 20px
+    display: inline-block
+  &__link
+    position: relative
+    padding: 4px 0
+    color: #ecf0e8
+    font-size: 17px
+    line-height: 35px
+  &__link:before
+    @include pseudo
+    top: 0
+    left: 0
+    right: 0
+    width: 0
+    height: 1px
+    background-color: $green
+    @include transition(all,0.3s,ease)
+  &__link:hover:before
+    width: 100%
+
+.sub-nav
+  display: inline-block
+
+.language
+  display: inline-block
+  padding: 0 20px
+  >a
+    border: 1px solid #bfd730
+  &__list
+    display: none
+    position: absolute
+  &__item
+    opacity: 0
+    animation-name: menu
+    animation-duration: .3s
+    animation-timing-function: ease-out
+    animation-fill-mode: forwards
+  &__link
+    padding: 4px 6px
+    color: #ecf0e8
+    font-size: 17px
+    display: block
+
+.language:hover
+  .language__list
+    display: block
+  .language__item:nth-child(1)
+    animation-delay: .15s
+  .language__item:nth-child(2)
+    animation-delay: .25s
+
+
+.search-b
+  display: inline-block
+  &__link
+    color: $green
+    padding: 3px 8px
+    display: block
+
+.search
+  display: none
+  position: absolute
+  left: 0
+  right: 0
+  background-color: rgba(255,255,255,0.3)
+  &__content
+    padding: 15px 30px
+  &__input
+    border: 0
+    color: white
+    font-family: 'Acrom',sans-serif
+    font-weight: 300
+    padding-right: 30px
+  &__close
+    width: 20px
+    height: 15px
+    position: absolute
+    right: 30px
+    top: 50%
+    margin-top: -7px
+    cursor: pointer
+    span
+      position: absolute
+      width: 20px
+      height: 2px
+      display: block
+      background-color: $green
+    span:nth-child(1)
+      transform: rotate(45deg)
+      top: 8px
+    span:nth-child(2)
+      transform: rotate(-45deg)
+      top: 8px
+
+.hamburger
+  display: none
+  position: absolute
+  right: 15px
+  top: 20px
+  width: 20px
+  height: 15px
+  cursor: pointer
+  span
+    position: absolute
+    width: 20px
+    height: 2px
+    background-color: #bfd730
+    @include transition(all,0.3s,ease)
+  span:nth-child(1)
+    top: 0
+  span:nth-child(2)
+    top: 6px
+    background-color: #fff
+  span:nth-child(3)
+    top: 12px
+
+.hamburger-open
+  span:nth-child(1)
+    top: 6px
+    transform: rotate(45deg)
+  span:nth-child(2)
+    opacity: 0
+  span:nth-child(3)
+    top: 6px
+    transform: rotate(-45deg)
+
+
+
+
+
+.app-top
+  position: relative
+  height: 100vh
+  background:
+    size: cover
+    image: url("../img/home-1.png")
+    position: center
+  overflow: hidden
+  &__scroll
+    position: absolute
+    bottom: 35px
+    left: 50%
+    transform: translateX(-50%)
+    span
+      display: block
+      @include wh(24px,37px)
+      border: 2px solid white
+      position: relative
+      border-radius: 15px
+      overflow: hidden
+    i
+      position: absolute
+      left: 50%
+      margin-left: -1px
+      top: 6px
+      display: block
+      height: 10px
+      width: 2px
+      background-color: $green
+      animation-name: mouse
+      animation-duration: 3s
+      animation-timing-function: ease-out
+      animation-iteration-count: infinite
+  .table-cell
+    height: 100vh
+
+
+
+
+
+
+
+
+.parallax
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  max-width: 1130px
+  padding: 0 15px
+  margin: auto
+  z-index: 1
+  &__item
+    position: absolute
+  &__item-1
+    left: 15px
+    bottom: 135px
+    span:nth-child(2)
+      top: 30px
+      left: 25px
+  &__item-2
+    top: 220px
+    left: 65px
+    span
+      background-color: #fff
+  &__item-3
+    top: 180px
+    right: 10px
+
+  &__item-4
+    right: 10px
+    bottom: 90px
+    span:nth-child(1)
+      top: -100px
+      right: 15px
+    span:nth-child(2)
+      top: -60px
+      right: 45px
+    span:nth-child(3)
+      background-color: #fff
+      top: -30px
+      right: 45px
+
+
+.square
+  @include wh(20px,20px)
+  position: absolute
+  display: block
+  background-color: $green
+
+
+
+
+
+
+
+
+.app-content
+  position: relative
+  padding: 100px 0
+  overflow: hidden
+  &__row:first-of-type
+    margin-bottom: 150px
+  &__column
+    margin-bottom: 50px
+  &__title
+    margin-bottom: 50px
+    white-space: pre-line
+  &__txt
+    color: rgba(65, 64, 66, 0.8)
+    font-size: 17px
+    line-height: 35px
+    margin-bottom: 45px
+    max-width: 645px
+  &__img-b
+    position: relative
+    max-width: 350px
+    box-shadow: 0 3px 29px rgba(109, 129, 138, 0.65)
+  &__img-b:before, &__img-b:after
+    @include pseudo
+  &__img-b:before
+    width: 24px
+    height: 24px
+    background-color: $main
+    right: 5px
+    top: -35px
+  &__img-b:after
+    width: 19px
+    height: 19px
+    background-color: $green
+    top: 5px
+    right: -30px
+  &__img-wrap
+    @include wh(100%,350px)
+    overflow: hidden
+
+
+.app-content:before
+    content: ''
+    position: absolute
+    left: -50%
+    top: -110px
+    overflow: visible
+    width: 100%
+    height: 685px
+    background: #f3fafa
+    z-index: -1
+    transform: skewY(15deg) translateX(50%)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+
+
+
+.project
+  margin-bottom: 30px
+  @include transition(all,0.3s,ease)
+  @include visibility
+  &__content
+    @include wh(100%,350px)
+    position: relative
+    padding: 30px
+    background:
+      size: cover
+      position: center
+      repeat: no-repeat
+  &__type-1
+    background-image: url(../img/project__type-1.png)
+  &__type-2
+    background-image: url(../img/project__type-2.png)
+  &__type-3
+    background-image: url(../img/project__type-3.png)
+  &__type-4
+    background-image: url(../img/project__type-4.png)
+  .table
+    position: relative
+    z-index: 9
+  &__title-wrap
+    position: relative
+    transform: translateY(10px)
+    @include transition(all,0.3s,ease)
+  &__title
+    @include title
+    display: inline
+    font-size: 28px
+    color: white
+    line-height: 30px
+    background: url(../img/title-bg.png) no-repeat -500px 0
+    @include visibility
+  &__desc
+    color: white
+    font-size: 18px
+    line-height: 24px
+    transform: scale(0)
+    opacity: 0
+    @include visibility
+    @include ellipsis(50px)
+    @include transition(all,0.3s,ease)
+  &__link
+    border: 1px solid transparent
+    background-color: $main
+    border-radius: 3px
+    padding: 4px 13px
+    box-shadow: 0 3px 19px rgba(10, 30, 39, 0.44)
+    @include title
+    font-size: 13px
+    color: white
+    transform: translateY(-10px)
+    @include transition(all,0.3s,ease)
+  &__overlay
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    opacity: 0
+    background-color: $main
+    @include visibility
+    @include transition(all,0.3s,ease)
+
+.project:hover
+  -webkit-transform: scale(1.04) translate3d(0,0,0)
+  -moz-transform: scale(1.04) translate3d(0,0,0)
+  -ms-transform: scale(1.04) translate3d(0,0,0)
+  -o-transform: scale(1.04) translate3d(0,0,0)
+  transform: scale(1.04) translate3d(0,0,0)
+  box-shadow: 0 3px 37px rgba(2, 3, 3, 0.5)
+  .project__desc
+    opacity: 1
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -ms-transform: scale(1)
+    -o-transform: scale(1)
+    transform: scale(1)
+  .project__overlay
+    opacity: 0.5
+  .project__title
+    -webkit-transition: background 2s ease
+    -moz-transition: background 2s ease
+    -o-transition: background 2s ease
+    transition: background 2s ease
+    background-position: 2px 0
+  .project__title-wrap
+    transform: translateY(-20px)
+  .project__link
+    background: transparent
+    border: 1px solid $main
+    transform: translateY(20px)
+
+
+
+.app-count
+  background:
+    size: cover
+    repeat: no-repeat
+    position: center
+    image: url("../img/app-count.png")
+  padding: 70px 0
+  &__column
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 33.333333%
+    -ms-flex: 0 0 33.333333%
+    flex: 0 0 33.333333%
+    max-width: 290px
+  .app-count__column:nth-child(3)
+    .app-count__content
+      border-right: 3px solid $green
+
+  &__content
+    padding: 30px
+    border-left: 3px solid $green
+  &__number, &__txt
+    text-shadow: 0 3px 19px rgba(10, 30, 39, 0.44)
+    color: white
+    text-align: center
+  &__number
+    @include title
+    font-size: 75px
+    line-height: 60px
+    margin-bottom: 40px
+  &__txt
+    color: white
+    font-size: 19px
+    line-height: 25px
+
+
+.app-news
+  margin: 120px 0
+  &__title
+    text-align: center
+    margin-bottom: 90px
+  &__column
+    margin-bottom: 30px
+
+.news
+  height: 100%
+  max-width: 350px
+  margin: auto
+  box-shadow: 0 3px 19px rgba(10, 30, 39, 0.13)
+  @include transition(all,0.3s,ease-out)
+  @include visibility
+  &__content
+    padding: 25px 40px 25px 25px
+  &__author
+    font-size: 15px
+    line-height: 28px
+    color: $grey
+    margin-bottom: 20px
+    @include visibility
+    span
+      font-family: 'Acrom',sans-serif
+      font-weight: 300
+      font-size: 17px
+    i
+      font-style: normal
+      color: $main
+      text-decoration: underline
+
+  &__img
+    @include wh(100%, 165px)
+    background:
+      size: cover
+      repeat: no-repeat
+      position: center
+    margin-bottom: 40px
+    @include visibility
+  &__img-type1
+    background-image: url('../img/news-type-1.png')
+  &__img-type2
+    background-image: url('../img/news-type-2.png')
+  &__img-type3
+    background-image: url('../img/news-type-3.png')
+  &__title
+    @include title
+    font-size: 19px
+    line-height: 30px
+    margin-bottom: 20px
+    @include transition(all,0.3s,ease-out)
+    @include visibility
+  &__txt
+    color: #8a8a8b
+    font-size: 16px
+    line-height: 25px
+    @include ellipsis(100px)
+    @include visibility
+  &__bottom
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 100%
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    max-width: 100%
+  &__btn
+    width: 100%
+.news:hover
+  -webkit-transform: scale(1.04)
+  -moz-transform: scale(1.04)
+  -ms-transform: scale(1.04)
+  -o-transform: scale(1.04)
+  transform: scale(1.04)
+  box-shadow: 0 3px 36px rgba(10, 30, 39, 0.13)
+  .news__title
+    color: $main
+
+
+
+.footer
+  padding: 90px 0
+  background-color: #F3FAFA
+  .title
+    margin-bottom: 70px
+  &__title:before, &__title:after
+    display: none
+
+
+.contact-list
+  &__item
+    position: relative
+    margin-bottom: 35px
+    i
+      position: absolute
+      left: 0
+      top: 7px
+      color: $main
+    p
+      padding-left: 65px
+      font-weight: 300
+      line-height: 28px
+      color: $black
+      font-size: 17px
+      span
+        display: block
+    .email
+      color: $main
+      text-decoration: underline
+      font-size: 15px
+
+
+.form
+  &__group
+    position: relative
+    margin-bottom: 60px
+  &__line
+    position: relative
+    display: block
+    width: 100%
+  &__line:before, &__line:after
+    @include pseudo
+    @include wh(0,2px)
+    bottom: 1px
+    background: $main
+    @include transition(all,0.3s,ease)
+  &__line:before
+    left: 50%
+  &__line:after
+    right: 50%
+
+
+
+
+
+
+
+  &__submit
+    width: 175px
+    border-radius: 3px
+
+.copyright
+  background-color: #414042
+  &__content
+    min-height: 50px
+  &__txt
+    color: rgba(255,255,255,0.6)
+
+.social-list
+  &__item
+    display: inline-block
+  &__link
+    font-size: 22px
+    padding-right: 20px
+    color: rgba(178,212,208,0.6)
+    @include transition(all,0.3s,ease)
+  &__link:hover
+    color: rgba(178,212,208,1)
+
+.development
+  p
+    margin-right: 10px
+    font-family: 'Acrom', sans-serif
+    font-size: 13px
+    font-weight: 300
+    color: rgba(255,255,255,0.6)
+    @include transition(all,0.3s,ease)
+    strong
+      font-family: 'Acrom',sans-serif
+      font-weight: 800
+      text-transform: uppercase
+.development:hover
+  p
+    color: rgba(255,255,255,1)
